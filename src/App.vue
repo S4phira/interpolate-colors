@@ -18,8 +18,8 @@ body {
 }
 #app {
   background-color: black;
+  font-family: "Pangolin", cursive;
   width: calc(100vw);
   height: calc(100vh);
-
 }
 </style>
