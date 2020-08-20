@@ -8,21 +8,13 @@
         <input type="color" class="colorBox__palette" v-model="color1" />
         <input class="colorBox__label" v-model="color1" />
       </div>
-      <button
-        :style="{ color: color1, borderColor: color1 }"
-        class="btn"
-        @click="randomHexColor(1)"
-      >random</button>
+      <button class="btn" @click="randomHexColor(1)">random color</button>
       <Range @setSteps="setSteps($event)" />
       <div class="colorBox">
         <input type="color" class="colorBox__palette" v-model="color2" />
         <input class="colorBox__label" v-model="color2" />
       </div>
-      <button
-        :style="{ color: color2, borderColor: color2 }"
-        class="btn"
-        @click="randomHexColor(2)"
-      >random</button>
+      <button class="btn" @click="randomHexColor(2)">random color</button>
     </div>
     <Colors :color1="color1" :color2="color2" :steps="steps" :colorModel="colorModel" />
   </div>
@@ -70,16 +62,18 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
+
   .container {
     height: 100%;
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px;
+    margin: 20px 100px;
+
     .btn {
       background-color: transparent;
-      border-radius: 32px;
+      border-radius: 15px;
       border: 1px solid #ffffff;
       display: inline-block;
       cursor: pointer;
@@ -93,21 +87,25 @@ export default {
     .colorBox {
       display: flex;
       margin: 10%;
-      width: 300px;
+      width: 260px;
       height: 70px;
       padding: 10px;
       justify-content: center;
+
       input {
         border: none;
         outline: none;
-        border-radius: 0 1em 1em 0;
+        border-radius: 0 30px 30px 0;
+
         &[type="color"] {
-          padding: 0;
+          cursor: pointer;
+          padding: 0 5px;
           width: 70px;
-          height: 102%;
+          height: 103%;
           border-radius: 30px 0 0 30px;
-          background-color: white;
+          background-color: rgb(236, 235, 235);
         }
+
         &::-moz-color-swatch {
           border: none;
           border-radius: 4em;
@@ -117,6 +115,7 @@ export default {
           border: none;
           border-radius: 4em;
         }
+
         &::-webkit-color-swatch-wrapper {
           padding: 0.35em;
           border-radius: 4em;
@@ -128,7 +127,6 @@ export default {
         width: 60%;
         height: 100%;
         background-color: rgb(255, 255, 255);
-        border-radius: 0 30px 30px 0;
         font-size: 35px;
         display: flex;
         align-items: center;
